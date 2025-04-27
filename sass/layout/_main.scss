@@ -1,0 +1,257 @@
+@use '../abstracts/variables' as var;
+@use'../abstracts/mixins' as mix;
+
+.main {
+    &__hero {
+        margin-bottom: 120px;
+        @include mix.breakpoint(tablet) {
+            height: 700px;
+        }
+        @include mix.breakpoint(desktop) {
+            display: flex;
+            height: 800px;
+            background: linear-gradient(to right, var.$color-black 50%, var.$color-white 50%);
+            position: relative;
+        }
+        &__img-container {
+            width: 100%;
+            z-index: -10;
+            @include mix.breakpoint(desktop) {
+                width: 540px;
+                z-index: 10;
+            }
+            img {
+                position: relative;
+                object-fit: cover;
+                height: 240px;
+                width: 100%;
+                overflow-x: visible;
+                @include mix.breakpoint(tablet) {
+                    height: 700px;
+                    width: 437px;
+                    position: absolute;
+                    left: 0;
+                    top:0;
+                    z-index: -10;
+                }
+                @include mix.breakpoint(desktop) {
+                    position: absolute;
+                    height: 800px;
+                    width: 540px;
+                    left: 33%;
+                    z-index: 10;
+                }
+            }
+        }
+        &__content{
+            position: relative;
+            margin-top: 32px;
+            padding: 0 16px;
+            @include mix.breakpoint(tablet){
+                margin-top: 145px;
+                margin-right: 40px;
+                width: 339px;
+                padding: 0;
+                position: relative;
+                margin: 145px 40px 145px auto;
+
+            }
+            @include mix.breakpoint(desktop){
+                display: flex;
+                justify-content: space-between;
+                gap: 20%;
+                align-items: start;
+                margin: 190px 130px 0 164px;
+                z-index: 20;
+                padding: 0;
+                position: absolute;
+                left: 2%;
+                bottom:44%;
+            }
+            h1 {
+                font-size: 60px;
+                font-weight: 900;
+                @include mix.breakpoint(tablet){
+                    font-size: 70px;
+                    font-weight: 800;
+                    line-height: 65px;
+                    }
+                @include mix.breakpoint(desktop){
+                color: var.$color-white;
+                width: 180%;
+                font-size: 96px;
+                }
+            }
+            &__p-btn{
+                p {
+                    margin-top: 32px;
+                    font-size: 18px;
+                    font-weight: 200;
+                    color: var.$color-grey;
+                    line-height: 28px;
+                    @include mix.breakpoint(tablet){
+                        line-height: 28px;
+                    }
+                    @include mix.breakpoint(desktop){
+                        font-size: 22px;
+                        margin-top: 0;
+                    }
+                }
+            }
+            &__btn{
+                margin-top: 32px;
+                width: 270px;
+                @include mix.breakpoint(desktop){
+                    margin-top: 100px;
+                }
+            }
+        }   
+    }
+    &__content {
+        margin: 0 16px;
+        @include mix.breakpoint(tablet) {
+            margin-top: 145px;
+        }
+        @include mix.breakpoint(desktop) {
+            margin: 180px 130px 180px 165px;
+        }
+        &__day-at-gallery {
+            @include mix.breakpoint(tablet) {
+                display: flex;
+                gap: 80px;
+                flex-direction: row-reverse;
+                height: 400px;
+            }
+            @include mix.breakpoint(desktop) {
+                display: flex;
+                flex-direction: row-reverse;
+                height: 400px;
+            }
+            img {
+                height: 343px;
+                width: 100%;
+                object-fit: cover;
+                @include mix.breakpoint(tablet) {
+                    width: 50%;
+                    height: 400px;
+                }
+                @include mix.breakpoint(desktop) {
+                    width: 60%;
+                    height: 400px;
+                }
+            }
+            &__content {
+                @include mix.breakpoint(tablet) {
+                }
+                h2 {
+                    margin-top: 25px;
+                    line-height: 45px;
+                    @include mix.breakpoint(tablet) {
+                        width: 70%;
+                        margin-top: 36px;
+                    }
+                    @include mix.breakpoint(desktop) {
+                        width: 70%;
+                        font-size: 60px;
+                        line-height: 60px;
+                    }
+                }
+                p {
+                    margin-top: 21px;
+                    @include mix.breakpoint(tablet) {
+                        width: 75%;
+                    }
+                    @include mix.breakpoint(desktop) {
+                        width: 70%;
+                        font-size: 22px;
+                        margin-top: 32px;
+
+                    }
+                }
+            }
+        }
+        &__be-inspired {
+            margin-top: 32px;
+            @include mix.breakpoint(tablet) {
+                margin-top: 11px;
+                display: grid;
+                grid-template-columns: 58% 40%;
+                grid-template-rows: 40% 60%;
+                column-gap: 2%;
+                height: 720px;
+            }
+            @include mix.breakpoint(desktop) {
+                margin-top: 30px;
+                display: grid;
+                grid-template-columns: 58% 40%;
+                grid-template-rows: 45% 55%;
+                column-gap: 2%;
+                height: 720px;
+
+            }
+            img:first-child {
+                height: 480px;
+                width: 100%;
+                object-fit: cover;
+                @include mix.breakpoint(tablet) {
+                    grid-row: 1 / span 2;
+                    grid-column: 1;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+                @include mix.breakpoint(desktop) {
+                    grid-row: 1 / span 2;
+                    grid-column: 1;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100;
+                }
+            }
+            img:nth-child(2){
+                margin-top: 11px;
+                width: 100%;
+                @include mix.breakpoint(tablet) {
+                    grid-row: 1;
+                    grid-column: 2;
+                    margin-top: 0;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                @include mix.breakpoint(desktop) {
+                    grid-row: 1;
+                    grid-column: 2;
+                    margin-top: 0;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &__content {
+                margin-top: 12px;
+                background-color: var.$color-black;
+                color: var.$color-white;
+                padding: 48px 27px;
+                @include mix.breakpoint(tablet) {
+                    margin-top: 11px;
+                }                
+                @include mix.breakpoint(desktop) {
+                    margin-top: 30px;
+                }
+                h2 {
+                    @include mix.breakpoint(desktop) {
+                        font-size: 60px;
+                        line-height: 60px;
+                    }
+                }
+                p {
+                    margin-top: 24px;
+                    color: var.$color-white;
+                    @include mix.breakpoint(desktop) {
+                        font-size: 22px;
+                        margin-top: 32px;
+                    }
+                }
+            }
+        }
+    }
+}

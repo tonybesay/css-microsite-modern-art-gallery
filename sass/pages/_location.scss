@@ -1,0 +1,137 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.main__location {
+    width: 100%;
+    &__map {
+        position: relative;
+        height: 550px;
+        width: 100%;
+        @include mix.breakpoint(tablet) {
+            height: 600px;
+        }
+        @include mix.breakpoint(tablet) {
+            height: 600px;
+        }
+        &__btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include mix.breakpoint(tablet) {
+                position: absolute;
+                top: 0;
+                left: 10%;
+            }
+            @include mix.breakpoint(desktop) {
+                position: absolute;
+                top: 0;
+                left: 10%;
+                z-index: 100;
+            }
+        }
+        &__img {
+            position: relative;
+            z-index: -50;
+            height: 100%;
+            width: 100%;
+            .btn_prueba {
+                position: relative;
+                display: inline-block;
+                z-index: 0;
+                top: 0;
+                right: 0;
+                a {
+                    display: inline-block;
+                    width: 274px;
+                }
+
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                right: 50%;
+                top: 50%;
+                width: 68px;
+                height: 100%;
+                background-image: url(../../img/icon-map-pin.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                transform: translate(50%, -8%);
+                z-index: 10;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+    &__street {
+        background-color: var.$color-black;
+        color: var.$color-white;
+        padding: 48px 16px 56px 16px;
+        @include mix.breakpoint(tablet) {
+            padding: 88px 40px 80px 39px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+        @include mix.breakpoint(desktop) {
+            padding: 104px 165px 128px 165px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+        h1{
+            font-size: 50px;
+            display: inline-block;
+            @include mix.breakpoint(tablet) {
+                font-size: 55px;
+                width: 220px;
+
+            }
+            @include mix.breakpoint(desktop) {
+                font-size: 70px;
+                width: 300px;
+            }
+        }
+        &__content{
+            display: inline-block;
+            @include mix.breakpoint(tablet) {
+                width: 400px;
+            }
+            @include mix.breakpoint(desktop) {
+                width: 540px;
+            }
+            h4 {
+                margin-top: 48px;
+                font-size: 32px;
+                color: var.$color-orange;
+                @include mix.breakpoint(tablet) {
+                    margin-top: 0;
+                }
+                @include mix.breakpoint(desktop) {
+                    margin-top: 0;
+                    font-size: 36px;
+                }
+            }
+            ul {
+                font-size: 18px;
+                margin-top: 20px;
+                color:var.$color-white;
+                @include mix.breakpoint(desktop) {
+                     font-size: 22px;
+                }
+            }
+            p {
+                font-size: 18px;
+                margin-top: 20px;
+                color:var.$color-white;
+                @include mix.breakpoint(desktop) {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+
+html * {
+    font-family: var.$primary-font;
+}
+ 
+body {
+    max-width: var.$max-desktop;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    font-size: 22px;  
+} 

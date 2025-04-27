@@ -1,0 +1,10 @@
+@use '../abstracts/mixins' as mix;
+
+
+.btn1 {
+    @include mix.button-1;
+}
+
+.btn2 {
+    @include mix.button-2;
+}

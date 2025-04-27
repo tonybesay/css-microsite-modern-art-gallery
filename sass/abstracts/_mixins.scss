@@ -1,0 +1,70 @@
+@use '../abstracts/variables' as var;
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (max-width: 3000px) and (min-width: 1025px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 1024px) and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 768px) and (min-width: 320px) {
+      @content;
+    }
+  } 
+}
+
+@mixin reset {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin button-1 {
+  background: linear-gradient(to right, var.$color-black 80%, var.$color-orange 20%);
+  color: var.$color-white;
+  text-transform: uppercase;
+  letter-spacing: 3.6px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  span{
+    padding: 24px 32px 24px 32px;
+    font-family: var.$title-font;
+  }
+  img {
+    padding: 0 24px;
+  }
+  &:hover {
+    background: linear-gradient(to right, var.$color-orange 80%, var.$color-black 20%);
+  }
+}
+@mixin button-2 {
+  background: linear-gradient(to right, var.$color-orange 20%, var.$color-black 20%);
+  color: var.$color-white;
+  text-transform: uppercase;
+  letter-spacing: 3.6px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  span{
+    padding: 24px 32px 24px 32px;
+    font-family: var.$title-font;
+  }
+  img {
+    padding: 0 24px;
+  }
+  &:hover {
+    background: linear-gradient(to right,var.$color-black 20%, var.$color-orange  20%);
+  }
+}
